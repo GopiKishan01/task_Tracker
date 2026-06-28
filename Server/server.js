@@ -15,7 +15,14 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://task-tracker-3-m04j.onrender.com"
+  ]
+}));
 
 app.use(express.json());
 
